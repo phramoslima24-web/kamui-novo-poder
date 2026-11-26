@@ -1,0 +1,30 @@
+{
+  "jutsu.kamuiprison.total": "Kamui: Prisão (Total · Prender)",
+  "jutsu.kamuiprison.partial": "Kamui: Prisão (Parcial · Sair)",
+
+  "gui.kamuiprison.dojutsu_board.button": "Kamui: Prisão",
+  "gui.kamuiprison.dojutsu_board.tooltip": "§dKamui: Prisão§r\nTotal: clique esquerdo em um mob ou jogador para enviá-lo à prisão do Kamui.\nParcial: use o jutsu para abrir a lista de prisioneiros e libertar um onde você estiver.\nUse as teclas ← e → para alternar o modo.\n§7Condição: JP.8/DS.150/Mangekyo de Obito",
+
+  "gui.kamuiprison.prison.title": "Kamui: Prisão - Prisioneiros",
+  "gui.kamuiprison.prison.empty": "Não há prisioneiros.",
+  "gui.kamuiprison.prison.page": "Página %s/%s",
+  "gui.kamuiprison.prison.prev": "< Anterior",
+  "gui.kamuiprison.prison.next": "Próxima >",
+  "gui.kamuiprison.prison.close": "Fechar",
+  "gui.kamuiprison.prison.entry_player": "[Jogador] %s",
+  "gui.kamuiprison.prison.entry_mob": "[Mob] %s",
+  "gui.kamuiprison.prison.entry_mob_named": "[Mob] %s (%s)",
+
+  "message.kamuiprison.mode_total": "§dKamui: Prisão - Total (Prender)",
+  "message.kamuiprison.mode_partial": "§dKamui: Prisão - Parcial (Sair)",
+  "message.kamuiprison.learned": "§dVocê aprendeu Kamui: Prisão",
+  "message.kamuiprison.cannot_seal": "§cEste alvo não pode ser enviado à prisão do Kamui",
+  "message.kamuiprison.captured": "§d%s foi enviado à prisão do Kamui",
+  "message.kamuiprison.released": "§a%s foi libertado",
+  "message.kamuiprison.release_pending": "§e%s está offline e será libertado quando entrar no jogo",
+  "message.kamuiprison.release_failed": "§cNão foi possível libertar o prisioneiro",
+  "message.kamuiprison.not_found": "§cPrisioneiro não encontrado",
+  "message.kamuiprison.dimension_missing": "§cA dimensão da prisão do Kamui não está disponível",
+  "message.kamuiprison.you_were_released": "§aVocê foi libertado da prisão do Kamui",
+  "command.kamuiprison.list_empty": "Não há prisioneiros."
+}

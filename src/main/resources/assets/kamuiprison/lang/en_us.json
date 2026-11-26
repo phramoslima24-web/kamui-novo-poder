@@ -1,0 +1,30 @@
+{
+  "jutsu.kamuiprison.total": "Kamui: Prison (Total · Capture)",
+  "jutsu.kamuiprison.partial": "Kamui: Prison (Partial · Release)",
+
+  "gui.kamuiprison.dojutsu_board.button": "Kamui: Prison",
+  "gui.kamuiprison.dojutsu_board.tooltip": "§dKamui: Prison§r\nTotal: left-click a mob or player to send it to the Kamui prison.\nPartial: use the jutsu to open the list of prisoners and release one where you stand.\nUse the ← and → keys to switch the mode.\n§7Condition: JP.8/DS.150/Obito's Mangekyo",
+
+  "gui.kamuiprison.prison.title": "Kamui: Prison - Prisoners",
+  "gui.kamuiprison.prison.empty": "There are no prisoners.",
+  "gui.kamuiprison.prison.page": "Page %s/%s",
+  "gui.kamuiprison.prison.prev": "< Previous",
+  "gui.kamuiprison.prison.next": "Next >",
+  "gui.kamuiprison.prison.close": "Close",
+  "gui.kamuiprison.prison.entry_player": "[Player] %s",
+  "gui.kamuiprison.prison.entry_mob": "[Mob] %s",
+  "gui.kamuiprison.prison.entry_mob_named": "[Mob] %s (%s)",
+
+  "message.kamuiprison.mode_total": "§dKamui: Prison - Total (Capture)",
+  "message.kamuiprison.mode_partial": "§dKamui: Prison - Partial (Release)",
+  "message.kamuiprison.learned": "§dYou learned Kamui: Prison",
+  "message.kamuiprison.cannot_seal": "§cThis target cannot be sent to the Kamui prison",
+  "message.kamuiprison.captured": "§d%s was sent to the Kamui prison",
+  "message.kamuiprison.released": "§a%s was released",
+  "message.kamuiprison.release_pending": "§e%s is offline and will be released when they log in",
+  "message.kamuiprison.release_failed": "§cCould not release the prisoner",
+  "message.kamuiprison.not_found": "§cPrisoner not found",
+  "message.kamuiprison.dimension_missing": "§cThe Kamui prison dimension is not available",
+  "message.kamuiprison.you_were_released": "§aYou were released from the Kamui prison",
+  "command.kamuiprison.list_empty": "There are no prisoners."
+}
