@@ -2,6 +2,7 @@ package com.kamuiprison.jutsu;
 
 import com.kamuiprison.compat.NarutoAssets;
 import com.kamuiprison.compat.NarutoBridge;
+import com.kamuiprison.compat.ObitoUnlockedCompat;
 import com.kamuiprison.config.PrisonConfig;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.network.chat.Component;
@@ -157,7 +158,9 @@ public final class KamuiPrisonJutsu {
         if (!PrisonConfig.REQUIRE_OBITO_MANGEKYO.get()) {
             return true;
         }
-        if (!"obito".equals(vars.getString("mangekyo_owner"))) {
+        // Obito Unlocked também concede os poderes de Kamui ao caminho Mangekyo do Sasuke.
+        // A classe de compatibilidade só reconhece Sasuke quando o addon opcional está carregado.
+        if (!ObitoUnlockedCompat.hasObitoKamui(vars.getString("mangekyo_owner"))) {
             return false;
         }
         Advancement advancement = player.server.getAdvancements()

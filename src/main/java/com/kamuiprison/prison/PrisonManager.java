@@ -3,6 +3,8 @@ package com.kamuiprison.prison;
 import com.kamuiprison.KamuiPrisonMod;
 import com.kamuiprison.compat.NarutoAssets;
 import com.kamuiprison.compat.NarutoBridge;
+import com.kamuiprison.compat.MangekyouAddonCompat;
+import com.kamuiprison.compat.ObitoUnlockedCompat;
 import com.kamuiprison.config.PrisonConfig;
 import com.kamuiprison.jutsu.KamuiPrisonJutsu;
 import com.kamuiprison.network.ModNetwork;
@@ -71,6 +73,12 @@ public final class PrisonManager {
         if (!(target instanceof LivingEntity living) || target == caster) {
             return;
         }
+        // Entidades auxiliares do Mangekyou (ex.: Susanoo e armas) não são prisioneiros:
+        // serializá-las fora do gerenciador do addon pode duplicar ou corromper seu estado.
+        if (MangekyouAddonCompat.isProtectedFromSealing(target)) {
+            caster.displayClientMessage(Component.translatable("message.kamuiprison.cannot_seal"), true);
+            return;
+        }
         MinecraftServer server = caster.server;
         if (target instanceof ServerPlayer targetPlayer && targetPlayer.isSpectator()) {
             return;
@@ -102,7 +110,7 @@ public final class PrisonManager {
             return;
         }
         boolean free = caster.isCreative();
-        if (!free && vars.getDouble("if_sharigan") != 2.0) {
+        if (!free && !ObitoUnlockedCompat.isMangekyoOpenForKamui(vars)) {
             caster.displayClientMessage(Component.translatable("text.needtoopenmangekyo"), true);
             return;
         }
@@ -147,13 +155,17 @@ public final class PrisonManager {
             return;
         }
         PrisonData data = PrisonData.get(server);
-        if (data.contains(targetId)) {
+        if (data.contains(targetId) || MangekyouAddonCompat.isProtectedFromSealing(target)) {
             return;
         }
         NarutoBridge.Vars vars = NarutoBridge.of(caster);
         boolean free = caster.isCreative() || caster.isSpectator();
         int cost = KamuiPrisonJutsu.totalChakraCost();
-        if (vars == null || (!free && vars.getDouble("chakra") < cost)) {
+        if (vars == null || (!free && !ObitoUnlockedCompat.isMangekyoOpenForKamui(vars))) {
+            caster.displayClientMessage(Component.translatable("text.needtoopenmangekyo"), true);
+            return;
+        }
+        if (!free && vars.getDouble("chakra") < cost) {
             caster.displayClientMessage(Component.translatable("text.notenoughchakra"), true);
             return;
         }

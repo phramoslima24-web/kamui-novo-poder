@@ -27,3 +27,13 @@ Kamui originais), usando o mesmo estado de jutsus (`PlayerVariables`), os mesmos
 
 O workflow usa JDK 17 e Gradle 8.1.1 (ForgeGradle 6 / Forge 47.3.0). O Narutoto **não** é necessário para compilar:
 a integração é feita por reflexão em `compat/NarutoBridge.java`.
+
+
+## Compatibilidade opcional
+
+O Kamui Prison inclui integração opcional, sem dependências de compilação, com:
+
+- `narutoto_mangekyou`: entidades auxiliares registradas por esse addon são protegidas contra captura pelo Kamui Prison.
+- `narutoto_obito_unlocked`: reconhece o caminho de Mangekyou do Sasuke para as condições de aprendizado e uso da Prisão, incluindo o estágio Mangekyou Eterno conforme a lógica do addon.
+
+As integrações detectam os addons em tempo de execução e não referenciam diretamente suas classes. O Narutoto continua sendo a dependência obrigatória do projeto.
